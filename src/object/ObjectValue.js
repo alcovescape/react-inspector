@@ -40,14 +40,14 @@ const ObjectValue = ({ object, styles }, { theme }) => {
       if (object instanceof Date) {
         return (
           <span>
-            {object.toString()}
+            {Object.prototype.toString.call(object)}
           </span>
         );
       }
       if (object instanceof RegExp) {
         return (
           <span style={mkStyle('objectValueRegExp')}>
-            {object.toString()}
+            {Object.prototype.toString.call(object)}
           </span>
         );
       }
@@ -78,7 +78,7 @@ const ObjectValue = ({ object, styles }, { theme }) => {
     case 'symbol':
       return (
         <span style={mkStyle('objectValueSymbol')}>
-          {object.toString()}
+          {Object.prototype.toString.call(object)}
         </span>
       );
     default:
